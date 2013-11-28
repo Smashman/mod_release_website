@@ -12,7 +12,9 @@ Copy the index.php from "release_hat_folder" into your newly created folder and 
 
 Then create an "archives" folder within your new folder and populate it with your release files.
 
-You can alter the style by modifying main/style.css
+Ensure you delete the schema files when releasing a new mod. These are found in your main folder.
+
+You can alter the style by modifying main/style.css.
 
 If you want to report a bug or ask for any help, configuring or styling, feel free to add me on Steam.
 http://steamcommunity.com/profiles/76561198000198761
