@@ -1,0 +1,16 @@
+body {
+	background: #FFFFFF;
+	font-family:"Segoe UI",Tahoma,Sans-serif; 
+	color: #000000;
+	text-align:center;
+}
+img {
+	border: none;
+}
+#workshop_link {
+	margin-top:20px;
+	display:inline-block;
+}
+.class {
+	font-weight:bold;
+}
