@@ -70,12 +70,12 @@ function get_schema_info($archive_link,$noitem,$class) {
 			$mod_item = array();
 			$mod_item[0]=$archive_link;
 			$mod_item[1]=$item["image_url"];
-			if($class){
-				$class_items[$class][]=$mod_item;
-			} elseif(count($item["used_by_classes"])===1) {
+			if(count($item["used_by_classes"])===1) {
 				$class=strtolower($item["used_by_classes"][0]);
-				$class_items[$class][]=$mod_item;
+			} elseif (!isset($item["used_by_classes"])) {
+				$class="all-class";
 			}
+			$class_items[$class][]=$mod_item;
 		}
 	}
 }
