@@ -10,11 +10,11 @@ $files = scandir(getcwd().'/'.$config['archive_subfolder']);
 $class_items = array();
 function get_schema_file() {
 	global $config;
-	return $config['schema_file'].$config["game"].".json";
+	return $config['main_folder']."schema".$config["game"].".json";
 }
 function get_style_file() {
 	global $config;
-	return $config['style_file'].".css";
+	return $config['main_folder']."style.css";
 }
 function do_curl($url) {
 	$ch = curl_init();
@@ -93,7 +93,7 @@ function execute() {
 	global $files,$archive_num,$config,$item_num,$class_pattern;
 	echo "<div id=\"hat_links\">";
 	foreach ($files as $f) {
-		if($f!="."&&$f!="..") {
+		if($f!="."&&$f!=".."&&$f!="place_archives_here.txt") {
 			$archive_num++;
 			$noext = str_replace(".".$config['ext'],"",$f);
 			$noitem = str_replace($config['hat_prefix'],"",$noext);
@@ -114,7 +114,7 @@ function execute() {
 		echo "<div>$archive_num archives, $item_num items present</div>";
 	}
 	if($config['workshop_id']) {
-		echo "<a href=\"http://steamcommunity.com/sharedfiles/filedetails/?id=".$config['workshop_id']."\" id=\"workshop_link\" target=\"_blank\"><img src=\"../../workshop.jpg\"></a>";
+		echo "<a href=\"http://steamcommunity.com/sharedfiles/filedetails/?id=".$config['workshop_id']."\" id=\"workshop_link\" target=\"_blank\"><img src=\"".$config['main_folder']."workshop.jpg\"></a>";
 	}
 }
 ?>

@@ -1,0 +1,6 @@
+# Schema Files #
+schema*.json
+
+# Testing files #
+*.zip
+*.vpk

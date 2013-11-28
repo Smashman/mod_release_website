@@ -1,12 +1,10 @@
 <?php
 $config=array(
 'api_key'=>'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', // API key to use. Get one here: http://steamcommunity.com/dev/apikey
-'main_php_file'=>'../main', //Location of the main php fail. Place this is a common folder that all mods can access. Extension not required.
-'schema_file'=>'../schema', //Schema cache location, common is also best. Extension not required.
-'style_file'=>'../style', //Style CSS file location, once again, common is best. Extension not required.
+'main_folder'=>'../main/', //Location of the main folder
 'check_count'=>false, // Change this to true to check that all archives are present upon the page. Essentially a dev thing, best keep it off for shipping.
 'game'=>440, //440 = TF2, 570 = Dota
-'ext'=>'.zip', //.vpk, .zip, .rar etc
+'ext'=>'vpk', //.vpk, .zip, .rar etc
 'archive_subfolder'=>'archives', //subfolder that contains archives
 
 //Most of the stuff above can be left the same over a number of releases. The stuff below are the bits you will have to change.
@@ -14,7 +12,7 @@ $config=array(
 'hat_prefix'=>'hatprefix', //Stuff at the beginning of the archive
 'workshop_id'=>'XXXXXXXX' //Bit after ?id= in workshop submission. Leave blank for no workshop button
 );
-$main_file = $config['main_php_file'].".php";
+$main_file = $config['main_folder']."main.php";
 include_once($main_file);
 ?>
 <!DOCTYPE html>
