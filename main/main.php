@@ -62,7 +62,6 @@ function load_data() {
 }
 function get_schema_info($archive_link,$noitem,$class) {
 	global $items,$class_items;
-	//echo "$archive_link $noitem";
 	foreach ($items as $item) {
 		$item_no = str_replace(" ","_",$item["name"]);
 		$item_no = preg_replace("/[^-a-zA-Z0-9_]+/","",$item_no);
@@ -70,6 +69,7 @@ function get_schema_info($archive_link,$noitem,$class) {
 			$mod_item = array();
 			$mod_item[0]=$archive_link;
 			$mod_item[1]=$item["image_url"];
+			$mod_item[2]=$item["item_name"];
 			if(count($item["used_by_classes"])===1) {
 				$class=strtolower($item["used_by_classes"][0]);
 			} elseif (!isset($item["used_by_classes"])) {
@@ -85,7 +85,7 @@ function render_class_items() {
 		echo "<div>Click the <span class=\"class\">".ucfirst($key)."</span> item you'd like to replace</div>";
 		foreach($class as $mod_item) {
 			$item_num++;
-			echo "<a href=".$config['archive_subfolder'].'/'.$mod_item[0]."><img src=\"".$mod_item[1]."\"></img></a>";
+			echo "<a href=".$config['archive_subfolder'].'/'.$mod_item[0]."><img src=\"".$mod_item[1]."\" alt=\"".$mod_item[2]."\" title=\"".$mod_item[2]."\"></img></a>";
 		}
 	}
 }

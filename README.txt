@@ -1,4 +1,4 @@
-//Created by Smashman - Version 1.1
+//Created by Smashman - Version 1.2
 
 This set of files easily provides download links for mod releases. It's designed for TF2, but I see no reason why it won't work with other Valve games.
 
