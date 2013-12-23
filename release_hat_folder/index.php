@@ -20,6 +20,7 @@ include_once($main_file);
 <head>
 	<title><?php echo $config['hat_name']?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_style_file()?>">
+	<meta charset=utf-8>
 </head>
 <body>
 	<?php
